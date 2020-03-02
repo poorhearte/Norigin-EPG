@@ -9,10 +9,10 @@ const Guide = props => {
 
   return (
     <div id='guide-style' style={{ width: size }} className={showNow}>
-      <Link className='link' to={`/program/${schedule.id}`}>
+      {/* <Link className='link' to={`/program/${schedule.id}`}> */}
         <h1 className='program-title'>{schedule.title}</h1>
         <span className='program-time'>{translateDate(schedule)}</span>
-      </Link>
+      {/* </Link> */}
     </div>
   );
 };

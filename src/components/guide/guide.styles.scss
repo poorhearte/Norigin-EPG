@@ -1,7 +1,7 @@
 #guide-style {
-    color: white;
+    //color: white;//변화없음
     word-wrap: break-word;
-    border: solid 0.5px rgb(45, 46, 47);
+    border: solid 0.5px rgb(143, 145, 146);
     text-align: left;
     height: 8.0166vh;
     min-height: 80px;
@@ -11,9 +11,11 @@
         font-size: 1.1rem;
         margin: 0;
         font-weight: 500;
-
-        &:hover {
-            color: orange;
+        // &:hover {
+        //     color: orange;
+        // }
+        h1 {
+            //color: white;
         }
     }
 
@@ -21,37 +23,14 @@
         font-size: 1.1rem;
         margin: 0;
         font-weight: 100;
-    }
-
-    h1 {
-        color: white;
-
-    }
-
-    span {
-        color: grayscale($color: #daaaaa);
+        color: #7a58d8;
+        span {
+            color: #76c9a2;
+            //color: grayscale($color: #daaaaa);
+        }
     }
 }
 
 .shownow {
-    background-color: gray;
-}
-
-@media all and (max-width: 320px) {
-    #guide-style {
-        height: 14.5vh;
-        padding: 11px;
-
-        .program-title {
-            font-size: 0.7em;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        .program-time {
-            font-size: 0.7rem;
-            margin: 0;
-            font-weight: 100;
-        }
-    }
+    background-color: rgb(167, 165, 165);
 }

@@ -4,8 +4,8 @@
     align-items: center;
     width: 100%;
     min-height: 77vh;
-    overflow-y: hidden;
-    overflow-x: auto;
+    overflow-y: hidden;///////////////?????
+    overflow-x: auto;//???????????????????
 
     .alignment {
         position: relative;
@@ -19,22 +19,22 @@
     }
 }
 
-#error {
-    margin-left: 25%;
-    width: 50%;
-    color: white;
-    background-color: coral;
-}
+// #error {
+//     margin-left: 25%;
+//     width: 50%;
+//     color: white;
+//     background-color: coral;
+// }
 
-#loader {
-    position: absolute;
-    margin-left: 25%;
-    width: 50%;
-    color: white;
-    background-color: coral;
-    font-size: 2rem;
-    text-align: center;
-}
+// #loader {
+//     position: absolute;
+//     margin-left: 25%;
+//     width: 50%;
+//     color: white;
+//     background-color: coral;
+//     font-size: 2rem;
+//     text-align: center;
+// }
 
 .header-date {
     display: flex;

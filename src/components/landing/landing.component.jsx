@@ -1,52 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import './landing.styles.scss';
-import HeaderDate from '../header/headerdate.component';
+//import HeaderDate from '../header/headerdate.component';
 import ChannelList, {
   getDatePosition
 } from '../channelList/channelList.component';
 import Timeline from '../header/headerTimeline.component';
 import useAssets from '../useAssets/useassets.component';
-import { Button } from 'semantic-ui-react';
 
-const LandingPage = ({ pos }) => {
+const LandingPage = ({ pos2 }) => {///pos2?????????????
   const { error, loading } = useAssets('epg');
   const [position, setPosition] = useState(7200);
-  const [scroll, setScroll] = useState(false);
+  //const [scroll, setScroll] = useState(true);
   const now = new Date();
   const currentShows = 7200 - getDatePosition(now);
 
   useEffect(() => {
-    (pos => {
+    (pos2 => {
       setPosition(currentShows);
-      scroll !== false
-        ? setInterval(() => {
-            const update = new Date();
-            const updateShows = 7200 - getDatePosition(update);
-            position <= -7200
-              ? setPosition(7200)
-              : currentShows !== updateShows
-              ? setPosition(updateShows)
-              : setPosition(currentShows);
-          }, 1000)
-        : setPosition(7200);
-    })(pos);
-  }, [pos, scroll]);
 
-  function renderNowButton(pos) {
-    const handleClickNow = () => {
-      setScroll(true);
-    };
+      setInterval(() => {
+        const update = new Date();
+        const updateShows = 7200 - getDatePosition(update);
+        position <= -7200
+          ? setPosition(7200)
+          : currentShows !== updateShows
+          ? setPosition(updateShows)
+          : setPosition(currentShows);
+      }, 10) //1000ms = 100 sec? ????????
 
-    if (scroll !== true) {
-      return (
-        <Button className='ui orange button' onClick={handleClickNow}>
-          NOW
-        </Button>
-      );
-    }
+    })(pos2);
 
-    return '';
-  }
+  }, [pos2]);
+
+
 
   if (loading) {
     return (
@@ -69,11 +55,10 @@ const LandingPage = ({ pos }) => {
 
   return (
     <div className='container'>
-      <HeaderDate />
+      {/* <HeaderDate /> */}
       <div className='landingpage'>
         <div className='alignment' style={{ left: `${position}px` }}>
           <Timeline position={position} />
-          {renderNowButton(scroll)}
           <ChannelList />
         </div>
       </div>

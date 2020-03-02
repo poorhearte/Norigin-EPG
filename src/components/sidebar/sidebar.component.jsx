@@ -20,15 +20,16 @@ const SideBar = () => {
         visible
         width='thin'
       >
-        <Menu.Item as='a' id='star'>
+        {/* <Menu.Item as='a' id='star'>
           <Icon className='star icon' />
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item id='opaque'>
           <Icon />
         </Menu.Item>
         {assets.map(asset => (
           <Menu.Item as='a' key={asset.id + 's'} className='menu-item'>
-            <img id='channel-logo' src={asset.images.logo} alt='logo' />
+            {asset.title}
+            {/* <img id='channel-logo' src={asset.images.logo} alt='logo' /> */}
           </Menu.Item>
         ))}
       </Sidebar>

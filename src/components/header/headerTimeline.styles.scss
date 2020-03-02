@@ -1,6 +1,6 @@
 .timeline-style {
   display: inline-flex;
-  color: white;
+  //color: white;
 
   .marker {
     position: absolute;
@@ -13,7 +13,7 @@
   .time-hour {
     width: 600px;
     padding: 20.5px 0 20.5px 0;
-    text-align: center;
+    text-align: left;/////////////////center;
     border: solid 1px rgb(45, 46, 47);
   }
 
