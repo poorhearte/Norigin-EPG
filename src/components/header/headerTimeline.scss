@@ -1,0 +1,28 @@
+.timeline-style {
+  display: inline-flex;
+
+  .marker {
+    position: absolute;
+    width: 1.8px;
+    height: 100%;
+    min-height: 886.5px;//////////화면비율 줄이면 작아지는 것 방지하기 위해 추가
+    background-color: gold;
+    //z-index: 2;
+    box-sizing: inherit;
+    //line-height: 1.4285em;
+  }
+
+  .time-hour {
+    width: 600px;
+    padding: 20.5px 0 20.5px 0;
+    text-align: left;/////////////////center;
+    //border: solid 1px rgb(45, 46, 47);
+    border: 1px solid rgba(34,36,38,.15);
+  }
+
+  // @media all and (max-width: 320px) {
+  //   .time-hour {
+  //     height: 55px;
+  //   }
+  // }
+}

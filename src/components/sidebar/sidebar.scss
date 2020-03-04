@@ -1,0 +1,125 @@
+
+  // #sidebar-pushable {
+  //   //height: 102vh;//86vh;//////////////////////vh=1% of the viewport's height
+  //   //overflow-y:hidden;   //default overflow=visible, auto (x y)
+  // }
+
+  #sidebar-style {
+    box-shadow: 1px 0 11px 1px black;///채널명 사이드바 사이의 음영
+    //border: 1px solid rgba(34,36,38,.15);
+    overflow: hidden !important;
+    //padding-top: 0;
+    //min-height: 886.5px;
+    width: 5rem; //////////////
+    background: #fff;///없으면 투명해서 아래것이 비침
+    position: fixed;//없으면 프로그램 가이드가 아래로 내려감
+    z-index: 102;///없으면 투명해서 아래것이 비침
+
+    #opaque {
+      z-index: -1;
+      height: 65px;
+    }
+
+    .menu-item {
+      height: 8.0166vh; //8.0166vh=80px
+      min-height: 80px;
+      border: 1px solid rgba(34,36,38,.15);//없으면 채널사이 경계선 없어짐
+    }
+  }
+
+///////////////////////////////////////////////////////////////////////
+  // @media all and (max-width: 320px) {//when the browser's width is 320px wide or less
+  //   #star {
+  //     padding: 25px;
+  //     .star-icon {
+  //       height: 7px;
+  //       padding: 0;
+  //       margin: auto;
+  //     }
+  //   }
+  //   .pusher {
+  //     max-height: 44px;
+  //     max-height: 44px;
+  //     padding-top: 0;
+  //   }
+  //   #sidebar-style {
+  //     .menu-item {
+  //       height: 14.5vh;
+  //     }
+  //     #opaque {
+  //       z-index: -1;
+  //       height: 55px;
+  //     }
+  //   }
+  //   #channel-logo {
+  //     height: 47px;
+  //     margin: auto;
+  //   }
+  //   #sidebar-pushable {
+  //     height: 420px;
+  //   }
+  // }
+  // @media all and (max-width: 420px) {//when the browser's width is 420px wide or less
+  //   #sidebar-pushable {
+  //     height: 84vh;
+  //   }
+  // }
+
+  // .pushable {
+  //   overflow-x: hidden;
+  //   //padding: 0!important;
+  // }
+  // .pushable:not(body)>.fixed, .pushable:not(body)>.pusher:after, .pushable:not(body)>.ui.sidebar {
+  //   //position: absolute;
+  // }
+  // .pushable:not(body) {
+  //   //-webkit-transform: translate3d(0,0,0);
+  //   //transform: translate3d(0,0,0);
+  // }
+  // .ui.visible.sidebar {
+  //   //visibility: visible;
+  // }
+  // .ui.sidebar {
+  //   position: fixed;//없으면 프로그램 가이드가 아래로 내려감
+  //   z-index: 102;///없으면 투명해서 아래것이 비침
+  //   //top: 0;
+  //   //left: 0;
+  //   // -webkit-backface-visibility: hidden;
+  //   // backface-visibility: hidden;
+  //   // -webkit-transition: none;
+  //   // transition: none;
+  //   // will-change: transform;
+  //   //-webkit-transform: translate3d(0,0,0);
+  //   //transform: translate3d(0,0,0);
+  //   //visibility: hidden;
+  //   //-webkit-overflow-scrolling: touch;
+  //   //height: 100%!important;
+  //   //max-height: 100%;
+  //   //border-radius: 0!important;
+  //   //margin: 0!important;
+  //   //overflow-y: auto!important;
+  // }
+  // .ui.vertical.menu {
+  //   //display: block;
+  //   //-webkit-box-orient: vertical;
+  //   //-webkit-box-direction: normal;
+  //   //-ms-flex-direction: column;
+  //   //flex-direction: column;
+  //   background: #fff;///없으면 투명해서 아래것이 비침
+  // }
+  // .ui.menu {
+  //   //display: flex;
+  //   //margin: 1rem 0;
+  //   border: 1px solid rgba(34,36,38,.15);
+  //   //min-height: 2.85714286em;
+  // }
+  // .ui.vertical.menu {
+  //   background: #fff;///없으면 투명해서 아래것이 비침
+  // }
+  // .ui.sidebar {
+  //   position: fixed;//없으면 프로그램 가이드가 아래로 내려감
+  //   z-index: 102;///없으면 투명해서 아래것이 비침
+  // }
+  // .pushable {
+  //   //overflow-x: hidden;
+  // }

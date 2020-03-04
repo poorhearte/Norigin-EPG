@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './guide.styles.scss';
+//import { Link } from 'react-router-dom';
+import './guide.scss';
 
 const Guide = props => {
   const { size, schedule } = props;

@@ -9,6 +9,7 @@
 
     .alignment {
         position: relative;
+        //box-sizing: inherit;
     }
 
     .button {
@@ -26,15 +27,15 @@
 //     background-color: coral;
 // }
 
-// #loader {
-//     position: absolute;
-//     margin-left: 25%;
-//     width: 50%;
-//     color: white;
-//     background-color: coral;
-//     font-size: 2rem;
-//     text-align: center;
-// }
+#loader {
+    position: absolute;
+    margin-left: 25%;
+    width: 50%;
+    color: white;
+    background-color: coral;
+    font-size: 2rem;
+    text-align: center;
+}
 
 .header-date {
     display: flex;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './headerTimeline.styles.scss';
+import './headerTimeline.scss';
 
 const Timeline = props => {
   const { position } = props;

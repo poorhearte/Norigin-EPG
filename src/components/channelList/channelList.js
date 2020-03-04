@@ -1,7 +1,7 @@
 import React from 'react';
 import useAssets from '../useAssets/useassets.component';
-import Guide from '../guide/guide.component';
-import './channelList.styles.scss';
+import Guide from '../guide/guide.js';
+import './channelList.scss';
 
 const ChannelList = () => {
   const { assets } = useAssets('epg');
@@ -57,6 +57,7 @@ function programSize(schedule) {
 function getDatePosition(date) {
   return date.getHours() * hourSize + date.getMinutes() * minuteSize;
 }
+
 function showTime(date) {
   return `${('0' + date.getHours()).slice(-2)}:${(
     '0' + date.getMinutes()

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 //import HeaderMenu from './components/header/headermenu.component';
 //import FullShow from './components/full/fullshow.component';
-import EPG from './components/full/epgfull.component';
+import EPG from './components/full/epgfull.js';
 
 function App() {
   return (
