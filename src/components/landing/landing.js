@@ -5,10 +5,10 @@ import ChannelList, {
   getDatePosition
 } from '../channelList/channelList.js';
 import Timeline from '../header/headerTimeline.js';
-import useAssets from '../useAssets/useassets.component';
+//import useAssets from '../useAssets/useassets.component';
 
 const LandingPage = () => {
-  const { error, loading } = useAssets('epg');
+  //const { error, loading } = useAssets('epg');
   const [position, setPosition] = useState(7200);
   const now = new Date();
   const currentShows = 7200 - getDatePosition(now);
@@ -17,8 +17,8 @@ const LandingPage = () => {
   //console.log('[LandingPage]position=',position,'getDatePosition(now)=',getDatePosition(now), 'now=',now );
 
   useEffect(() => {
-    console.log('[useEffect]loading=', loading);
-    //console.log('[useEffect]position=',position,'getDatePosition(now)=',getDatePosition(now), 'now=',now );
+    //console.log('[useEffect]loading=', loading);
+    console.log('[useEffect]position=',position,'getDatePosition(now)=',getDatePosition(now), 'now=',now );
     setPosition(currentShows);
     if(scrollElem.current!==0) {
       scrollElem.current.scrollLeft=getDatePosition(now); //current.getBoundingClientRect() 
@@ -41,7 +41,7 @@ const LandingPage = () => {
     }, 1000) //1000ms = 100 sec? ????????
   }, [position]);
 
-  if (loading) {
+  /*if (loading) {
     return (
       <div id='loader' className='ui segment'>
         <i className='notched circle loading icon' /> Loading...
@@ -58,7 +58,7 @@ const LandingPage = () => {
         </div>
       </div>
     );
-  }
+  }*/
 
   return (
     <div className='container'>
