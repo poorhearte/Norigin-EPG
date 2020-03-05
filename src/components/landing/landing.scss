@@ -1,35 +1,27 @@
 .landingpage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    display: flex;//없으면 화면구성 이상해짐
+    flex-direction: column;//없으면 뭔가 약간 이상해짐
+    align-items: center;//없으면 화면구성 이상해짐
+    //width: 100%;
     min-height: 77vh;
-    overflow-y: hidden;///////////////?????
-    overflow-x: auto;//???????????????????
+    overflow-y: hidden;//없으면 가장 오른쪽 스크롤바생김
+    //overflow-x: auto;
 
     .alignment {
-        position: relative;
-        //box-sizing: inherit;
-    }
-
-    .button {
-        position: fixed;
-        right: 111px;
-        bottom: 111px;
-        z-index: 2;
+        position: relative;//없으면 verticalNowLine없어지고 이상해짐
     }
 }
-.header-timeline {
-    display: flex;
-    width: 100%;
+// .header-timeline {
+//     display: flex;
+//     width: 100%;
 
-    .channels {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 7px 0 7px 0;
-    }
-}
+//     .channels {
+//         display: flex;
+//         justify-content: space-between;
+//         width: 100%;
+//         padding: 7px 0 7px 0;
+//     }
+// }
 
 // #error {
 //     margin-left: 25%;

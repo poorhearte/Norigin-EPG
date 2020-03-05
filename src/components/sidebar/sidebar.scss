@@ -1,9 +1,3 @@
-
-  // #sidebar-pushable {
-  //   //height: 102vh;//86vh;//////////////////////vh=1% of the viewport's height
-  //   //overflow-y:hidden;   //default overflow=visible, auto (x y)
-  // }
-
   #sidebar-style {
     box-shadow: 1px 0 11px 1px black;///채널명 사이드바 사이의 음영
     //border: 1px solid rgba(34,36,38,.15);
@@ -16,8 +10,8 @@
     z-index: 102;///없으면 투명해서 아래것이 비침
 
     #opaque {
-      z-index: -1;
-      height: 65px;
+      //z-index: -1;
+      height: 65px;//없으면 이 칸이 없어지면서 채널사이드바가 위로 올라감
     }
 
     .menu-item {
