@@ -4,6 +4,6 @@
 
 .channel-list {
   display: flex;
-  margin: 0;
-  padding: 0;
+  margin: 0;//없으면 그리드 사이간격 넓어지면서 이상해짐
+  //padding: 0;
 }

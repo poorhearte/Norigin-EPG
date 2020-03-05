@@ -3,31 +3,19 @@
     word-wrap: break-word;
     border: solid 0.5px rgb(143, 145, 146);
     text-align: left;
-    height: 8.0166vh;
+    height: 8.0166vh;//없으면 웹페이지 비율바뀌면 안맞게됨
     min-height: 80px;
     padding: 17px;
 
     .program-title {
         font-size: 1.1rem;
-        margin: 0;
+        margin: 0;//없으면 이상해짐
         font-weight: 500;
-        // &:hover {
-        //     color: orange;
-        // }
-        h1 {
-            //color: white;
-        }
     }
 
     .program-time {
         font-size: 1.1rem;
-        margin: 0;
-        font-weight: 100;
         color: #7a58d8;
-        span {
-            color: #76c9a2;
-            //color: grayscale($color: #daaaaa);
-        }
     }
 }
 

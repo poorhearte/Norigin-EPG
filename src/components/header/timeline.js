@@ -1,12 +1,12 @@
 import React from 'react';
-import './headerTimeline.scss';
+import './timeline.scss';
 
 const Timeline = props => {
   const { position } = props;
 
   return (
     <div className='timeline-style'>
-      <div className='marker' style={{ left: `${7200 - position}px` }} />
+      <div className='verticalMarker' style={{ left: `${7200 - position}px` }} />
       {timeloop()}
     </div>
   );

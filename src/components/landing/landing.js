@@ -4,7 +4,7 @@ import './landing.scss';
 import ChannelList, {
   getDatePosition
 } from '../channelList/channelList.js';
-import Timeline from '../header/headerTimeline.js';
+import Timeline from '../header/timeline.js';
 //import useAssets from '../useAssets/useassets.component';
 
 const LandingPage = () => {
