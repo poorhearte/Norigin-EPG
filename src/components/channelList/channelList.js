@@ -1,16 +1,24 @@
 import React from 'react';
 import useAssets from '../useAssets/useassets.component';
 import Guide from '../guide/guide.js';
-import './channelList.scss';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(theme => ({
+  channelList: {
+    display: 'flex',//없으면 모든 시간표가 일렬로
+    margin: '0',//없으면 그리드 사이간격 넓어지면서 이상해짐
+    padding: '0'//없으면 채널스케쥴이 살짝 뒤로 가면서 시간표랑 안맞아짐 찾기어려웠음 주의할 것
+  }
+}));
 const ChannelList = () => {
   const { assets } = useAssets('epg');
+  const classes = useStyles();
 
   return (
     <div id='channels-container'>
       {assets.map(asset => {
         return (
-          <ul key={asset.id} className='channel-list'>
+          <ul key={asset.id} className={classes.channelList}>
             {asset.schedules.map((schedule, index) => (
               <Guide
                 key={schedule.id + index}

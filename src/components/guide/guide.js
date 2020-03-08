@@ -1,18 +1,39 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
-import './guide.scss';
+//import './guide.scss';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  guideStyle: {
+    wordWrap: 'break-word',
+    border: 'solid 0.5px rgb(143, 145, 146)',
+    textAlign: 'left',
+    height: '8.0166vh',//없으면 웹페이지 비율바뀌면 안맞게됨
+    minHeight: '80px',
+    padding: '17px',//없으면 제목이 위로올라감
+  },
+  programTitle: {
+      fontSize: '1.1rem', //없으면 글자엄청커짐
+      margin: '0',//없으면 이상해짐
+      fontWeight: '500'
+  },
+  programTime: {
+      color: '#7a58d8'
+  },
+  shownow: {
+    backgroundColor: 'rgb(167, 165, 165)'
+  }
+}));
 
 const Guide = props => {
+  const classes = useStyles();
   const { size, schedule } = props;
 
-  const showNow = currentShow(schedule) ? 'shownow' : '';
+  const showNow = currentShow(schedule) ? `${classes.guideStyle} ${classes.shownow}` : classes.guideStyle;
 
   return (
-    <div id='guide-style' style={{ width: size }} className={showNow}>
-      {/* <Link className='link' to={`/program/${schedule.id}`}> */}
-        <h1 className='program-title'>{schedule.title}</h1>
-        <span className='program-time'>{translateDate(schedule)}</span>
-      {/* </Link> */}
+    <div  style={{ width: size }} className={showNow}>
+        <h1 className={classes.programTitle}>{schedule.title}</h1>
+        <span className={classes.programTime}>{translateDate(schedule)}</span>
     </div>
   );
 };

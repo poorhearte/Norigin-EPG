@@ -1,11 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './landing.scss';
-//import HeaderDate from '../header/headerdate.component';
 import ChannelList, {
   getDatePosition
 } from '../channelList/channelList.js';
 import Timeline from '../header/timeline.js';
-//import useAssets from '../useAssets/useassets.component';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  landingpage: {
+    display: 'flex',//없으면 화면구성 이상해짐
+    flexDirection: 'column',//없으면 뭔가 약간 이상해짐
+    alignItems: 'center',//없으면 화면구성 이상해짐
+    minHeight: '77vh',
+    overflowY: 'hidden',//없으면 가장 오른쪽 스크롤바생김
+  }, 
+  alignment : {
+    position: 'relative'//없으면 verticalNowLine없어지고 이상해짐
+  }
+}));
+
 
 const LandingPage = () => {
   //const { error, loading } = useAssets('epg');
@@ -13,6 +25,7 @@ const LandingPage = () => {
   const now = new Date();
   const currentShows = 7200 - getDatePosition(now);
   const scrollElem = useRef(0);
+  const classes = useStyles();
 
   //console.log('[LandingPage]position=',position,'getDatePosition(now)=',getDatePosition(now), 'now=',now );
 
@@ -63,8 +76,8 @@ const LandingPage = () => {
   return (
     <div className='container'>
       {/* <HeaderDate /> */}
-      <div className='landingpage' ref={scrollElem}>
-        <div className='alignment' style={{ left: `7200px`}}  >
+      <div className={classes.landingpage} ref={scrollElem}>
+        <div className={classes.alignment} style={{ left: `7200px`}}  >
         {/* <div className='alignment' style={{ left: `${position}px` }}> */}
           <Timeline position={position} />
           <ChannelList />
