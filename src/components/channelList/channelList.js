@@ -1,5 +1,5 @@
 import React from 'react';
-import useAssets from '../useAssets/useassets.component';
+import useAssets from '../useAssets/useassets';
 import Guide from '../guide/guide.js';
 import { makeStyles } from '@material-ui/core/styles';
 

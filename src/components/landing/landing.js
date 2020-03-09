@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
 
 
 const LandingPage = () => {
-  //const { error, loading } = useAssets('epg');
   const [position, setPosition] = useState(7200);
   const now = new Date();
   const currentShows = 7200 - getDatePosition(now);

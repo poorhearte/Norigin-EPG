@@ -1,6 +1,6 @@
 import React from 'react';
 import LandingPage from '../landing/landing.js';
-import useAssets from '../useAssets/useassets.component';
+import useAssets from '../useAssets/useassets';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
