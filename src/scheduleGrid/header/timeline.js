@@ -16,8 +16,8 @@ const useStyles = makeStyles(theme => ({
   verticalMarker: {
     position: 'absolute',//없으면 verticalNowLine이 위로 겹치지 않고 자기공간 차지함
     width: '1.8px',
-    //height: '90%',//없으면 화면비율 줄이면 없어짐
-    height: '75vh',//바깥넓이 77vh랑 같으면 항상 스크롤바 생기게됨 그래서 조금 줄여줘야함
+    height: '100%',//없으면 화면비율 줄이면 없어짐
+    //height: '75vh',//바깥넓이 77vh랑 같으면 항상 스크롤바 생기게됨 그래서 조금 줄여줘야함
     backgroundColor: 'gold'
   }
 }));

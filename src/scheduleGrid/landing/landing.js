@@ -11,8 +11,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',//없으면 뭔가 약간 이상해짐
     alignItems: 'center',//없으면 화면구성 이상해짐
     background: '#fff',
-    height: '77vh',//채널갯수 많을 때 화면밑으로 내려가지 않도록
-    overflowY: 'auto',//채널갯수 많을 때 화면밑으로 내려가지 않고 스크를되도록
+    // height: '77vh',//채널갯수 많을 때 화면밑으로 내려가지 않도록
+    overflowX: 'auto',//???overflowX혹은overflowY가 auto아니면 자동 스크롤위치 변경이 안됨
   }, 
   alignment : {
     position: 'relative'//없으면 verticalNowLine없어지고 이상해짐

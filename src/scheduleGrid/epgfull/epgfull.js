@@ -14,7 +14,10 @@ const useStyles = makeStyles(theme => ({
 		}
 	},
   epg: {
-    boxSizing: 'border-box'//box-sizing이라고 하면 문법에러남
+    boxSizing: 'border-box',//box-sizing이라고 하면 문법에러남
+    height: '77vh',//채널갯수 많을 때 화면밑으로 내려가지 않도록
+    overflowY: 'auto',//채널갯수 많을 때 화면밑으로 내려가지 않고 스크를되도록
+    transform: 'translate3d(0,0,0)',//////중요 이거없으면 sideBar가 함께 스크롤링되지 않고 무조건 고정됨
     // display: 'flex',
     // flexWrap: 'wrap',
     // '& > *': {
