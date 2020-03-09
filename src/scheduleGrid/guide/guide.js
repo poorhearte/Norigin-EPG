@@ -1,11 +1,12 @@
 import React from 'react';
-//import './guide.scss';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   guideStyle: {
     wordWrap: 'break-word',
-    border: 'solid 0.5px rgb(143, 145, 146)',
+    //border: 'solid 0.5px rgb(143, 145, 146)',
+    borderStyle: 'solid',
+    borderWidth: '0.2px 0.2px 0.2px 0px',
     textAlign: 'left',
     height: '8.0166vh',//없으면 웹페이지 비율바뀌면 안맞게됨
     minHeight: '80px',
@@ -24,33 +25,40 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Guide = props => {
+const Guide = ({ size, schedule, timeOrder }) => {
   const classes = useStyles();
-  const { size, schedule } = props;
-
   const showNow = currentShow(schedule) ? `${classes.guideStyle} ${classes.shownow}` : classes.guideStyle;
 
   return (
     <div  style={{ width: size }} className={showNow}>
         <h1 className={classes.programTitle}>{schedule.title}</h1>
-        <span className={classes.programTime}>{translateDate(schedule)}</span>
+        <span className={classes.programTime}>{translateDate(schedule, timeOrder)}</span>
     </div>
   );
 };
 
-function translateDate(schedule) {
+function translateDate(schedule, timeOrder) {
+  //console.log('timeOrder=',timeOrder);
   const start = new Date(schedule.start);
   const end = new Date(schedule.end);
 
-  return (
-    ('0' + start.getHours()).slice(-2) +
-    ':' +
-    ('0' + start.getMinutes()).slice(-2) +
-    ' - ' +
-    ('0' + end.getHours()).slice(-2) +
-    ':' +
-    ('0' + end.getMinutes()).slice(-2)
-  );
+  if(timeOrder===0)
+    return (
+      ' - ' +
+      ('0' + end.getHours()).slice(-2) +
+      ':' +
+      ('0' + end.getMinutes()).slice(-2)
+    );
+  else
+    return (
+      ('0' + start.getHours()).slice(-2) +
+      ':' +
+      ('0' + start.getMinutes()).slice(-2) +
+      ' - ' +
+      ('0' + end.getHours()).slice(-2) +
+      ':' +
+      ('0' + end.getMinutes()).slice(-2)
+    );
 }
 
 function currentShow(schedule) {

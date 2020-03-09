@@ -1,5 +1,4 @@
 import React from 'react';
-//import './timeline.scss';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -10,13 +9,15 @@ const useStyles = makeStyles(theme => ({
     width: '600px',//없으면 젤 위 시간표 줄어듦
     padding: '20.5px 0 20.5px 0',//없으면 젤위 시간표가 위아래로 완전 짧아짐
     textAlign: 'left',/////////////////center;
-    border: '1px solid rgba(34,36,38,.15)'
+    //border: '1px solid rgba(34,36,38,.15)'
+    borderStyle: 'solid',
+    borderWidth: '0.2px 0.2px 0.2px 0px',
   },
   verticalMarker: {
     position: 'absolute',//없으면 verticalNowLine이 위로 겹치지 않고 자기공간 차지함
     width: '1.8px',
-    height: '100%',//없으면 화면비율 줄이면 없어짐
-    minHeight: '886.5px',//////////화면비율 줄이면 작아지는 것 방지하기 위해 추가
+    //height: '90%',//없으면 화면비율 줄이면 없어짐
+    height: '75vh',//바깥넓이 77vh랑 같으면 항상 스크롤바 생기게됨 그래서 조금 줄여줘야함
     backgroundColor: 'gold'
   }
 }));

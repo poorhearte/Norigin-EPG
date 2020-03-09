@@ -10,8 +10,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',//없으면 화면구성 이상해짐
     flexDirection: 'column',//없으면 뭔가 약간 이상해짐
     alignItems: 'center',//없으면 화면구성 이상해짐
-    minHeight: '77vh',
-    overflowY: 'hidden',//없으면 가장 오른쪽 스크롤바생김
+    background: '#fff',
+    height: '77vh',//채널갯수 많을 때 화면밑으로 내려가지 않도록
+    overflowY: 'auto',//채널갯수 많을 때 화면밑으로 내려가지 않고 스크를되도록
   }, 
   alignment : {
     position: 'relative'//없으면 verticalNowLine없어지고 이상해짐
@@ -73,8 +74,7 @@ const LandingPage = () => {
   }*/
 
   return (
-    <div className='container'>
-      {/* <HeaderDate /> */}
+    <div>
       <div className={classes.landingpage} ref={scrollElem}>
         <div className={classes.alignment} style={{ left: `7200px`}}  >
         {/* <div className='alignment' style={{ left: `${position}px` }}> */}

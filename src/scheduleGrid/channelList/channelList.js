@@ -10,12 +10,13 @@ const useStyles = makeStyles(theme => ({
     padding: '0'//없으면 채널스케쥴이 살짝 뒤로 가면서 시간표랑 안맞아짐 찾기어려웠음 주의할 것
   }
 }));
+
 const ChannelList = () => {
   const { assets } = useAssets('epg');
   const classes = useStyles();
 
   return (
-    <div id='channels-container'>
+    <div>
       {assets.map(asset => {
         return (
           <ul key={asset.id} className={classes.channelList}>
@@ -24,6 +25,7 @@ const ChannelList = () => {
                 key={schedule.id + index}
                 size={programSize(schedule)}
                 schedule={schedule}
+                timeOrder={index}
               />
             ))}
           </ul>
