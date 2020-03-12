@@ -19,15 +19,16 @@ const ChannelList = () => {
     <div>
       {assets.map(asset => {
         return (
-          <ul key={asset.id} className={classes.channelList}>
-            {asset.schedules.map((schedule, index) => (
-              <Guide
-                key={schedule.id + index}
-                size={programSize(schedule)}
-                schedule={schedule}
-                timeOrder={index}
-              />
-            ))}
+          <ul key={asset.channelId} className={classes.channelList}>
+            {asset.schedules.map((schedule, index) => 
+                (<Guide
+                  key={schedule.programId + index}
+                  programLeft={getProgramLeft(schedule, index)}
+                  programWidth={getProgramWidth(schedule)}
+                  schedule={schedule}
+                  isStartTimeInitialized={isStartTimeInitialized}
+                />)
+            )}
           </ul>
         );
       })}
@@ -36,52 +37,55 @@ const ChannelList = () => {
 };
 
 const hourMinutes = 60;
-const hourSize = 600;
-const minuteSize = hourSize / hourMinutes;
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-];
+const HOUR_PX_SIZE = 600;
+const MINUTE_PX_SIZE = HOUR_PX_SIZE / hourMinutes;
+let isStartTimeInitialized = false;
 
-function programSize(schedule) {
+function getProgramWidth(schedule) {
+
+  //if() TODO 시작시간이 0시이하일 경우 00시로 초기화
+
   const start = new Date(schedule.start);
   const end = new Date(schedule.end);
 
-  let size =
-    end.getHours() * hourMinutes +
-    end.getMinutes() -
+  const durationInMinute =
+    (end.getHours() * hourMinutes + end.getMinutes()) -
     (start.getHours() * hourMinutes + start.getMinutes());
-  return Math.abs(size * minuteSize);
+  
+    return Math.abs(durationInMinute * MINUTE_PX_SIZE);
 }
 
-function getDatePosition(date) {
-  return date.getHours() * hourSize + date.getMinutes() * minuteSize;
+let PROGRAM_LEFT_OF_EACH_CHANNEL = 0;
+function getProgramLeft(schedule, index){
+  if(index===0){
+    const start = new Date(schedule.start);
+    let size = start.getHours() * hourMinutes + start.getMinutes(); 
+    PROGRAM_LEFT_OF_EACH_CHANNEL = Math.abs(size * MINUTE_PX_SIZE)
+    return PROGRAM_LEFT_OF_EACH_CHANNEL;
+  }
+  else
+    return PROGRAM_LEFT_OF_EACH_CHANNEL;
 }
 
-function showTime(date) {
-  return `${('0' + date.getHours()).slice(-2)}:${(
-    '0' + date.getMinutes()
-  ).slice(-2)}`;
+export function getDatePosition(date) {
+  return date.getHours() * HOUR_PX_SIZE + date.getMinutes() * MINUTE_PX_SIZE;
 }
 
-function showTitle(start, end) {
-  const startShow = new Date(start);
-  const endShow = new Date(end);
+// function showTime(date) {
+//   return `${('0' + date.getHours()).slice(-2)}:${(
+//     '0' + date.getMinutes()
+//   ).slice(-2)}`;
+// }
 
-  return `${startShow.getDate()} ${months[startShow.getMonth()]}: ${showTime(
-    startShow
-  )} - ${showTime(endShow)}`;
-}
+// function showTitle(start, end) {
+//   const startShow = new Date(start);
+//   const endShow = new Date(end);
 
+//   return `${startShow.getDate()} ${months[startShow.getMonth()]}: ${showTime(
+//     startShow
+//   )} - ${showTime(endShow)}`;
+// }
+
+//export { getDatePosition, showTitle };
 export default ChannelList;
-export { getDatePosition, showTitle };
+

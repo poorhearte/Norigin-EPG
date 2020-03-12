@@ -18,7 +18,7 @@ const useAssets = asset => {
         setShows(response.data);
         setLoading(false);*/
 
-        setAssets(channelData.channels);
+        setAssets(channelData);
         setShows(channelData.data);
         setLoading(false);
 
@@ -39,7 +39,85 @@ const useAssets = asset => {
 export default useAssets;
 
 const channelData =
-{
+[
+  {
+      "channelId": "PLUTO_ch",
+      "channelName": "PLUTO_channel",
+      "providerId": "PLT",
+      "schedules": [
+          {
+              "programId": "PLUTO_pr",
+              "title": "PLUTO_pr_title",
+              "start": "2020-03-11T00:00:00Z",
+              "end": "2020-03-11T02:10:00Z"
+          },
+          {
+              "programId": "PLUTO_pr",
+              "title": "PLUTO_pr_title",
+              "start": "2020-03-11T02:10:00Z",
+              "end": "2020-03-11T02:30:00Z"
+          },
+          {
+              "programId": "PLUTO_pr",
+              "title": "PLUTO_pr_title",
+              "start": "2020-03-11T02:30:00Z",
+              "end": "2020-03-11T04:05:00Z"
+          },
+          {
+              "programId": "PLUTO_pr",
+              "title": "PLUTO_pr_title",
+              "start": "2020-03-11T04:05:00Z",
+              "end": "2020-03-11T05:15:00Z"
+          },
+          {
+              "programId": "PLUTO_pr",
+              "title": "PLUTO_pr_title",
+              "start": "2020-03-11T05:15:00Z",
+              "end": "2020-03-11T09:20:00Z"
+          }
+      ]
+  },
+  {
+      "channelId": "RKT_ch",
+      "channelName": "RKT_channel",
+      "providerId": "RKT",
+      "schedules": [
+          {
+              "programId": "RKT_pr",
+              "title": "2 Days & 1 Night",
+              "start": "2020-03-11T00:00:00Z",
+              "end": "2020-03-11T01:10:00Z"
+          },
+          {
+              "programId": "RKT_pr",
+              "title": "2 Days & 1 Night",
+              "start": "2020-03-11T01:10:00Z",
+              "end": "2020-03-11T02:30:00Z"
+          },
+          {
+              "programId": "RKT_pr",
+              "title": "2 Days & 1 Night",
+              "start": "2020-03-11T02:30:00Z",
+              "end": "2020-03-11T03:05:00Z"
+          },
+          {
+              "programId": "RKT_pr",
+              "title": "2 Days & 1 Night",
+              "start": "2020-03-11T03:05:00Z",
+              "end": "2020-03-11T05:45:00Z"
+          },
+          {
+              "programId": "RKT_pr",
+              "title": "2 Days & 1 Night",
+              "start": "2020-03-11T05:45:00Z",
+              "end": "2020-03-11T08:20:00Z"
+          }
+      ]
+  }
+];
+
+
+/*{
   "channels": [
     {
       "id": "sky1",
@@ -2044,482 +2122,7 @@ const channelData =
           "end": "2020-03-04T23:50:00+09:00"
         }
       ]
-    },//////////////////
-    {
-      "id": "channel5",
-      "title": "Channel 5",
-      "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_channel5.png"
-      },
-      "schedules": [
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T00:00:00+09:00",
-          "end": "2020-03-04T00:30:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T00:30:00+09:00",
-          "end": "2020-03-04T00:50:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T00:50:00+09:00",
-          "end": "2020-03-04T01:40:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T01:40:00+09:00",
-          "end": "2020-03-04T02:10:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T02:10:00+09:00",
-          "end": "2020-03-04T02:40:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T02:40:00+09:00",
-          "end": "2020-03-04T03:00:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T03:00:00+09:00",
-          "end": "2020-03-04T03:30:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T03:30:00+09:00",
-          "end": "2020-03-04T04:00:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T04:00:00+09:00",
-          "end": "2020-03-04T04:30:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T04:30:00+09:00",
-          "end": "2020-03-04T05:10:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T05:10:00+09:00",
-          "end": "2020-03-04T05:40:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T05:40:00+09:00",
-          "end": "2020-03-04T06:20:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T06:20:00+09:00",
-          "end": "2020-03-04T07:00:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T07:00:00+09:00",
-          "end": "2020-03-04T07:50:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T07:50:00+09:00",
-          "end": "2020-03-04T08:40:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T08:40:00+09:00",
-          "end": "2020-03-04T09:30:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T09:30:00+09:00",
-          "end": "2020-03-04T09:50:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T09:50:00+09:00",
-          "end": "2020-03-04T10:10:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T10:10:00+09:00",
-          "end": "2020-03-04T11:00:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T11:00:00+09:00",
-          "end": "2020-03-04T11:40:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T11:40:00+09:00",
-          "end": "2020-03-04T12:30:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T12:30:00+09:00",
-          "end": "2020-03-04T13:20:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T13:20:00+09:00",
-          "end": "2020-03-04T14:10:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T14:10:00+09:00",
-          "end": "2020-03-04T15:00:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T15:00:00+09:00",
-          "end": "2020-03-04T15:30:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T15:30:00+09:00",
-          "end": "2020-03-04T16:10:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T16:10:00+09:00",
-          "end": "2020-03-04T16:40:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T16:40:00+09:00",
-          "end": "2020-03-04T17:10:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T17:10:00+09:00",
-          "end": "2020-03-04T18:00:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T18:00:00+09:00",
-          "end": "2020-03-04T18:30:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T18:30:00+09:00",
-          "end": "2020-03-04T19:20:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T19:20:00+09:00",
-          "end": "2020-03-04T19:50:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T19:50:00+09:00",
-          "end": "2020-03-04T20:40:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T20:40:00+09:00",
-          "end": "2020-03-04T21:00:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T21:00:00+09:00",
-          "end": "2020-03-04T21:40:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T21:40:00+09:00",
-          "end": "2020-03-04T22:20:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T22:20:00+09:00",
-          "end": "2020-03-04T22:50:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T22:50:00+09:00",
-          "end": "2020-03-04T23:20:00+09:00"
-        }
-      ]
-    },///////////////////////
-    {
-      "id": "channel5",
-      "title": "Channel 5",
-      "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_channel5.png"
-      },
-      "schedules": [
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T00:00:00+09:00",
-          "end": "2020-03-04T00:30:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T00:30:00+09:00",
-          "end": "2020-03-04T00:50:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T00:50:00+09:00",
-          "end": "2020-03-04T01:40:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T01:40:00+09:00",
-          "end": "2020-03-04T02:10:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T02:10:00+09:00",
-          "end": "2020-03-04T02:40:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T02:40:00+09:00",
-          "end": "2020-03-04T03:00:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T03:00:00+09:00",
-          "end": "2020-03-04T03:30:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T03:30:00+09:00",
-          "end": "2020-03-04T04:00:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T04:00:00+09:00",
-          "end": "2020-03-04T04:30:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T04:30:00+09:00",
-          "end": "2020-03-04T05:10:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T05:10:00+09:00",
-          "end": "2020-03-04T05:40:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T05:40:00+09:00",
-          "end": "2020-03-04T06:20:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T06:20:00+09:00",
-          "end": "2020-03-04T07:00:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T07:00:00+09:00",
-          "end": "2020-03-04T07:50:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T07:50:00+09:00",
-          "end": "2020-03-04T08:40:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T08:40:00+09:00",
-          "end": "2020-03-04T09:30:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T09:30:00+09:00",
-          "end": "2020-03-04T09:50:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T09:50:00+09:00",
-          "end": "2020-03-04T10:10:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T10:10:00+09:00",
-          "end": "2020-03-04T11:00:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T11:00:00+09:00",
-          "end": "2020-03-04T11:40:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T11:40:00+09:00",
-          "end": "2020-03-04T12:30:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T12:30:00+09:00",
-          "end": "2020-03-04T13:20:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T13:20:00+09:00",
-          "end": "2020-03-04T14:10:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T14:10:00+09:00",
-          "end": "2020-03-04T15:00:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T15:00:00+09:00",
-          "end": "2020-03-04T15:30:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T15:30:00+09:00",
-          "end": "2020-03-04T16:10:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T16:10:00+09:00",
-          "end": "2020-03-04T16:40:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T16:40:00+09:00",
-          "end": "2020-03-04T17:10:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T17:10:00+09:00",
-          "end": "2020-03-04T18:00:00+09:00"
-        },
-        {
-          "title": "Supernatural",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T18:00:00+09:00",
-          "end": "2020-03-04T18:30:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T18:30:00+09:00",
-          "end": "2020-03-04T19:20:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T19:20:00+09:00",
-          "end": "2020-03-04T19:50:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T19:50:00+09:00",
-          "end": "2020-03-04T20:40:00+09:00"
-        },
-        {
-          "title": "Cool Stuff",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T20:40:00+09:00",
-          "end": "2020-03-04T21:00:00+09:00"
-        },
-        {
-          "title": "Game of Thrones",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T21:00:00+09:00",
-          "end": "2020-03-04T21:40:00+09:00"
-        },
-        {
-          "title": "Vikings",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T21:40:00+09:00",
-          "end": "2020-03-04T22:20:00+09:00"
-        },
-        {
-          "title": "Awesome Program",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T22:20:00+09:00",
-          "end": "2020-03-04T22:50:00+09:00"
-        },
-        {
-          "title": "Interesting Show",
-          "id": "dummy_program_id",
-          "start": "2020-03-04T22:50:00+09:00",
-          "end": "2020-03-04T23:20:00+09:00"
-        }
-      ]
-    },////////////////////////////
-
+    },
 
   ]
-};
+};*/
